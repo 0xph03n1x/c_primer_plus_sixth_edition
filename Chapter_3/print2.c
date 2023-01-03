@@ -15,8 +15,8 @@ int main(void)
 	/*
 	To produce the same result as the one in the book the %ld has to be changed to %d:
 
-	Result with %ld - verybig = 12345678908642 and not 12345678908642
-	Result with %d - verybig = 12345678908642 and not 1942899938
+	Result with %ld format specifier - verybig = 12345678908642 and not 12345678908642
+	Result with %d format specifier - verybig = 12345678908642 and not 1942899938
 
 	Windows returns the expected result for %ld (1942899938).
 	Does this mean the long int in linux is actually 8 bytes (64 bit) on a 64-bit system, whereas Windows lont int is 4 bytes (32 bits)? 
