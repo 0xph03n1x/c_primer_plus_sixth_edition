@@ -1,4 +1,4 @@
-// exercise7.c
+// exercise8.c
 #include <stdio.h>
 #define BASE_RATE 10.0
 #define OVERTIME 1.5
@@ -6,10 +6,20 @@
 #define TAX_450 0.20
 #define TAX_REST 0.25
 
+void ask_rate(){
+	printf("*****************************************************************\n");
+	printf("1) $8.75/hr						2) $9.33/hr\n");
+	printf("3) $10.00/hr						2) $11.20/hr\n");
+	printf("5) quit\n");
+	printf("*****************************************************************\n");
+}
+
 int main(void)
 {
-	int hours, overtime_hrs = 0;
-	float gross_p, net_p, taxes;
+	int hours, choice, overtime_hrs = 0;
+	float base_rate, gross_p, net_p, taxes;
+
+	ask_rate();
 
 	printf("Enter number of hours for the week:\n");
 	scanf("%d", &hours);
