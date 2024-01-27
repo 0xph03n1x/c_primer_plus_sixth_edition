@@ -1,24 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>  // exit() prototype
+#define SLEN 20
 
-int main(int argc, char* argv[]) {
-  int ch;
-  FILE* fp;
+int main(void) {
+  int ch;    // place to store each character as read
+  FILE *fp;  // "file pointer"
+  char file[20];
   unsigned long count = 0;
-  if (argc != 2) {
-    printf("Usage: %s filename\n", argv[0]);
-    exit(EXIT_FAILURE);
-  }
-  if ((fp = fopen(argv[1], "r")) == NULL) {
-    printf("Cant't open %s\n", argv[1]);
+
+  printf("Please enter the filename: ");
+  scanf("%s", file);
+
+  if ((fp = fopen(file, "r")) == NULL) {
+    printf("Can't open %s\n", file);
     exit(EXIT_FAILURE);
   }
   while ((ch = getc(fp)) != EOF) {
-    putc(ch, stdout);
+    putc(ch, stdout);  // same as putchar(ch);
     count++;
   }
   fclose(fp);
-  printf("File %s has %lu characters\n", argv[1], count);
+  printf("File %s has %lu characters\n", file, count);
 
   return 0;
 }
